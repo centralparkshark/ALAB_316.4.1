@@ -27,6 +27,7 @@ function registerUser(e) {
             passwordMatch(user.password, user.passwordCheck)) 
         {
             saveUser(userData)
+            successRegister(user.username.value)
             e.currentTarget.reset();
         } 
     }
@@ -146,4 +147,9 @@ function successLogin(username, persist) {
     } else {
         main.innerHTML = `Successful login, ${username}.`
     }
+}
+
+function successRegister(username) {
+    const main = document.getElementById("main")
+    main.innerHTML = `You have successfully registered ${username}!`
 }
